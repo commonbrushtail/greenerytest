@@ -1,0 +1,68 @@
+/*!
+Theme Name: Greenery
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-menu {
+    @apply pointer-events-none opacity-0;
+  }
+  .mobile-menu.active {
+    @apply pointer-events-auto opacity-100;
+  }
+
+  .ac.is-active .ac-header .ac-trigger {
+    @apply text-green-g !important;
+  }
+}
+
+@layer utilities {
+  /* for new iphone that don't have home button (add this to the button of the page so that user can still tap*/
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+    padding-top: constant(safe-area-inset-top);
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-bottom: constant(safe-area-inset-bottom);
+  }
+  .pr-safe {
+    padding-right: env(safe-area-inset-right);
+    padding-right: constant(safe-area-inset-right);
+  }
+  .pl-safe {
+    padding-left: env(safe-area-inset-left);
+    padding-left: constant(safe-area-inset-left);
+  }
+}
+
+@font-face {
+  font-family: "greenery-Bold";
+  src: url("../assets/fonts/greenery-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "greenery-Italic";
+  src: url("../assets/fonts/greenery-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "greenery-Regular";
+  src: url("../assets/fonts/greenery-Regular.ttf") format("truetype");
+}
+/**
+html.modal-active {
+  @apply overflow-hidden;
+}
+**/
+
+.test{
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: 1fr 0.5fr 0.5fr 0.3fr; 
+}
